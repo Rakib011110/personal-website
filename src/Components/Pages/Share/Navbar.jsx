@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="fixed bottom-2 lg:bottom-8 w-full overflow-hidden z-50">
       <div className="container mx-auto">
         {/* nav inner */}
-        <div className="w-full bg-black/20 h-[96px] backdrop-blur-2xl rounded-full max-w-[400px] mx-auto flex justify-between items-center px-5">
+        <div className="w-full  h-[96px] backdrop-blur-2xl rounded-full max-w-[400px] mx-auto flex justify-between items-center px-5">
           <Link
             to="home"
             activeClass="active"

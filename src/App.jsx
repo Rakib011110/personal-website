@@ -8,12 +8,22 @@ import Banner from "./Components/Pages/Share/Banner";
 import Experience from "./Components/Pages/Experience";
 import HeaderNav from "./Components/HeaderNav/HeaderNav";
 import SocialLinks from "./Common/SocialLink";
+import ParticlesBg from "particles-bg";
+import Work from "./Components/Pages/Works/Work";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const backgroundStyle = {
+    backgroundColor: "#0000ff", // Set the background color to blue (#0000ff)
+  };
   return (
     <>
+      <ParticlesBg
+        className="mx-auto container"
+        type="custom"
+        bg={true}
+        num={5}
+      />
+
       <HeaderNav></HeaderNav>
       <SocialLinks></SocialLinks>
 
@@ -29,9 +39,11 @@ function App() {
           <Experience></Experience>
         </section>
         <section id="work">
-          <h1>Work Section</h1>
+          <Work></Work>
         </section>
-        <section id="contact">{/* <Contact></Contact> */}</section>
+        <section id="contact">
+          <Contact></Contact>
+        </section>
       </div>
     </>
   );

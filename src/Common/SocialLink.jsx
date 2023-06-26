@@ -12,7 +12,7 @@ const SocialLinks = () => {
           Linkdin <FaLinkedin size={30} />
         </>
       ),
-      href: "https://github.com/theyashpatel",
+      href: "https://www.linkedin.com/in/rakibul-islam8/",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const SocialLinks = () => {
           GitHub <FaGithub size={30} />
         </>
       ),
-      href: "https://github.com/theyashpatel",
+      href: "https://github.com/Rakib011110",
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ const SocialLinks = () => {
           Resume <BsFillPersonLinesFill size={30} />
         </>
       ),
-      href: "/resume.pdf",
+      href: "/PROJECTS.pdf",
       style: "rounded-br-md",
       download: true,
     },
