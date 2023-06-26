@@ -1,0 +1,56 @@
+body {
+  background: linear-gradient(
+    92.23deg,
+    #091e69 21.43%,
+
+    #041844 50.63%,
+    #3a0450 100%,
+    #b936ee 50.63%,
+
+    #460c44 117.04%
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite, spinAnimation 1s linear 1; /* Set animation iteration count to 1 */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes spinAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn {
+  background: linear-gradient(
+    92.23deg,
+    #ff56f6 21.43%,
+    #b936ee 50.63%,
+    #3bace2 100%,
+    #406aff 117.04%
+  );
+  box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
+}
+
+.btn:hover {
+  background: linear-gradient(
+    92.23deg,
+    #406aff 21.43%,
+    #3bace2 50.63%,
+    #b936ee 100%,
+    #ff56f6 117.04%
+  );
+}
