@@ -15,7 +15,7 @@ function Navbar() {
             smooth={true}
             spy={true}
             offset={-200}
-            className="cursor-pointer  btn w-[55px] h-[55px] flex items-center justify-center"
+            className="cursor-pointer   w-[55px] h-[55px] flex items-center justify-center"
           >
             <BiHomeAlt className="text-white text-2xl" />
           </Link>
@@ -24,7 +24,7 @@ function Navbar() {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer btn  w-[55px] h-[55px] flex items-center justify-center"
+            className="cursor-pointer   w-[55px] h-[55px] flex items-center justify-center"
           >
             <BiUser className="text-white text-2xl" />
           </Link>
@@ -33,7 +33,7 @@ function Navbar() {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer btn w-[55px] h-[55px] flex items-center justify-center"
+            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center"
           >
             <BsClipboardData className="text-white text-2xl" />
           </Link>
@@ -42,7 +42,7 @@ function Navbar() {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer btn w-[55px] h-[55px] flex items-center justify-center"
+            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center"
           >
             <BsBriefcase className="text-white text-2xl" />
           </Link>
@@ -51,7 +51,7 @@ function Navbar() {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer btn w-[55px] h-[55px] flex items-center justify-center"
+            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center"
           >
             <BsChatSquare className="text-white text-2xl" />
           </Link>
