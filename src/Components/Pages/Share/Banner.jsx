@@ -52,7 +52,7 @@ const Banner = () => {
                     2000,
                     "FRONT END DEV",
                     2000,
-                    "MEARN STACK DEV",
+                    "MERN STACK DEV",
                     2000,
 
                     "WEB DESIGNER",
@@ -71,7 +71,7 @@ const Banner = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="mb-8 max-w-lg mx-auto lg:mx-0"
+              className="mb-8 max-w-lg mx-auto lg:mx-0 text-white"
             >
               Welcom to My Personal Website Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Maxime mollitia, molestiae quas vel

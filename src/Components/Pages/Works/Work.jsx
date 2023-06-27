@@ -4,13 +4,13 @@ import TextComponent from "../../../Common/Title";
 
 const Work = () => {
   return (
-    <div className="text-center mt-52 mb-32">
+    <div className="text-center   mt-52 mb-32 container mx-auto">
       <TextComponent>
-        <p className="text-4xl font-bold border-b-4 text-center border-gray-500 p-2 inline">
+        <p className="text-4xl  w-1/2 mx-auto font-bold border-b-4 text-center border-gray-500 p-2 ">
           MY RECENT WORK
         </p>
       </TextComponent>
-      <div className="wrapper mt-16  mx-auto grid lg:grid-cols-3  w-[1200px] gap-10 md:grid-cols-3 sm:grid-cols-1">
+      <div className=" w-full mt-16 lg:w-[1200px] gap-4  mx-auto grid lg:grid-cols-3  md:grid-cols-2 sm:grid-cols-2">
         <Card
           image="https://i.ibb.co/qjrbYYM/home-KIDDSTOYS.png"
           title="TOY STORE "
@@ -35,7 +35,7 @@ const Work = () => {
 
 const Card = ({ image, title, description }) => {
   return (
-    <div className="card ">
+    <div className="card  ">
       <div className="face front">
         <img className=" rounded-md" src={image} alt={title} />
         <h1 className="text-h1">{title}</h1>

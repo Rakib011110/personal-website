@@ -37,10 +37,10 @@ const AboutText = () => {
         {activeTab === "experience" && (
           <div>
             <div>
-              <div className="text-[40px] font-tertiary text-gradient mb-2">
+              <div className="text-[40px] font-tertiary text-gradient mb-2 text-white">
                 <CountUp start={0} end={13} duration={3} />
               </div>
-              <div className="font-primary text-sm tracking-[2px]">
+              <div className="font-primary text-sm  text-white tracking-[2px]">
                 Years of <br />
                 exprience
               </div>

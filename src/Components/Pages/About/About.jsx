@@ -81,12 +81,12 @@ const About = () => {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <div className="flex-1">
-                <h2 className="h2 text-accent"></h2>
-                <h3 className="h3 mb-4 font-serif">
+              <div className="flex-1 text-white">
+                <h2 className="h2 text-white"></h2>
+                <h3 className="h3 mb-4 font-serif text-white">
                   I'm a Front-end Developer with over 2 years of exprience.
                 </h3>
-                <p className="mb-6 font-serif">
+                <p className="mb-6 font-serif text-white">
                   As a web developer experienced in , JavaScript, my goal is to
                   build captivating websites and applications. <br /> I am eager
                   to learn and collaborate with a talented team to create user-
@@ -97,15 +97,15 @@ const About = () => {
                 </p>
               </div>
               {/* stats */}
-              <div className="flex gap-x-6 lg:gap-x-10 mb-12">
+              <div className="flex gap-x-6 flex-wrap lg:gap-x-10 mb-12">
                 <AboutText></AboutText>
 
                 <div>
-                  <div className="text-[40px] font-tertiary text-gradient mb-2">
-                    <CountUp start={0} end={13} duration={3} />
+                  <div className="text-[40px]  text-white font-tertiary text-gradient mb-2">
+                    <CountUp start={0} end={10} duration={3} />
                     k+
                   </div>
-                  <div className="font-primary text-sm tracking-[2px]">
+                  <div className="font-primary flex-wrap text-sm tracking-[2px] text-white">
                     Satisfied <br />
                     Clients
                   </div>

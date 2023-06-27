@@ -60,7 +60,7 @@
   transform: perspective(600px) rotateY(180deg);
   background: rgb(3, 35, 54);
   padding: 15px;
-  color: crimson;
+  color: white;
   text-align: center;
   box-shadow: 0 5px 10px #fff;
 }
@@ -69,13 +69,13 @@
 }
 
 .links {
-  border-top: 1px solid crimson;
+  border-top: 1px solid white;
   height: 50px;
   line-height: 50px;
 }
 
 .link-a {
-  color: crimson;
+  color: white;
 }
 
 .card .back .text-h2 {
