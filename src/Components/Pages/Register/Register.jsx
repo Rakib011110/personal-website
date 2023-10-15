@@ -1,11 +1,31 @@
-import React from "react";
+import { Player } from "@lottiefiles/react-lottie-player";
+import React, { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 const Register = () => {
+  const [error, setError] = useState();
+
+  const handleCreateUser = (e) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, email, password, photo);
+  };
+
+  const handlegithulogin = () => {};
+  const handleGooglesignIn = () => {};
+
   return (
     <div>
       <div>
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero  bg-base-200 ">
           <div className="hero-content flex-col lg:flex-row-reverse">
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="card flex-shrink-0 h-full  w-full max-w-sm shadow-2xl bg-base-100">
               <h1 className="text-5xl font-bold text-indigo-600">
                 Register now!
               </h1>
