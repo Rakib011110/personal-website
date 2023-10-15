@@ -17,7 +17,8 @@ import Button from "../../../Common/Button";
 import Title from "../../../Common/Title";
 import TextComponent from "../../../Common/Title";
 import { Link } from "react-scroll";
-
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import bgAnimate from "../../../../public/bgAnimattion.json";
 const Banner = () => {
   return (
     <section
@@ -133,20 +134,34 @@ const Banner = () => {
           </div>
 
           {/* images */}
-          <div
-            style={{
-              background: "linear-gradient(to right, #7a49a8, #61a4bc)",
-              borderRadius: "50%",
-            }}
-          >
-            <motion.div
+          <div className="">
+            <div
               variants={fadeIn("down", 0.5)}
               initial="hidden"
               whileInView={"show"}
-              className="hidden lg:flex  flex-1 max-w-[320px] lg:max-w-[682px] w-[620px] "
+              className="hidden lg:flex mb- flex-1  max-w-[320px] lg:max-w-[682px] w-[620px] relative" // Added relative positioning
             >
-              <img className="rounded-full" src={Image} alt="" />
-            </motion.div>
+              <Player
+                className="mt-10"
+                autoplay
+                loop
+                src={bgAnimate}
+                style={{
+                  position: "absolute",
+                  top: 25,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+              <img
+                className="rounded-full relative border border-purple-600"
+                src={Image}
+                alt=""
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </div>
           </div>
         </div>
       </div>

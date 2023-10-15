@@ -24,14 +24,31 @@ function App() {
         num={5}
       />
 
+      {/* <AnimatedCursor type="rings" /> */}
+
+      {/* Custom cursor with a custom image */}
+      {/* <AnimatedCursor
+        type="rings"
+        innerSize={18}
+        outerSize={30}
+        color="255,0,0"
+        outerAlpha={0.4}
+        innerScale={0.7}
+        outerScale={5}
+      /> */}
+
+      {/* Predefined cursor types */}
+      {/* <AnimatedCursor type="circle" /> */}
+
       <HeaderNav></HeaderNav>
       <SocialLinks></SocialLinks>
-
       <Navbar />
-      <div className="content">
+
+      <div className="content bg-[url('https://zyan.vercel.app/images/bg/banner.jpg')] bg-cover ">
         <section id="home">
           <Banner></Banner>
         </section>
+
         <section id="about">
           <About></About>
         </section>
