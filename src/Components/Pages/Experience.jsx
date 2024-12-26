@@ -10,7 +10,7 @@ import MongoDb from "../../assets/skill/mongoDb.png";
 import TS from "../../assets/skill/typescript.png";
 import prisma from "../../assets/skill/prisma-4.svg";
 import github from "../../assets/skill/github.png";
-import redux from "../../assets/skill/redux.png";
+import redux from "../../assets/skill/Redux.png";
 import graphql from "../../assets/skill/graphql.png";
 import { motion } from "framer-motion";
 import TextComponent from "../../Common/Title";
