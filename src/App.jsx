@@ -13,7 +13,7 @@ import Work from "./Components/Pages/Works/Work";
 
 function App() {
   const backgroundStyle = {
-    backgroundColor: "#0000ff", // Set the background color to blue (#0000ff)
+    backgroundColor: "#0000ff",
   };
   return (
     <>
