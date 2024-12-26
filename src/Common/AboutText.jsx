@@ -9,55 +9,64 @@ const AboutText = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-end gap-10">
-      <div className="  mb-4">
+    <div className="flex flex-col items-center justify-center gap-6">
+      {/* Tabs */}
+      <div className="flex gap-4">
         <div
-          className={`mr-4 py-2 btn px-4 rounded ${
+          className={`py-2 btn px-6 rounded cursor-pointer ${
             activeTab === "experience"
               ? "bg-blue-500 text-white"
               : "bg-gray-300"
-          } cursor-pointer`}
-          onClick={() => handleTabClick("experience")}
-        >
+          }`}
+          onClick={() => handleTabClick("experience")}>
           Experience
         </div>
-        <br />
-
         <div
-          className={`py-2 px-4 rounded btn mt-10  ${
+          className={`py-2 px-6 btn rounded cursor-pointer ${
+            activeTab === "clients" ? "bg-blue-500 text-white" : "bg-gray-300"
+          }`}
+          onClick={() => handleTabClick("clients")}>
+          Clients
+        </div>
+        <div
+          className={`py-2 px-6 btn rounded cursor-pointer ${
             activeTab === "projects" ? "bg-blue-500 text-white" : "bg-gray-300"
-          } cursor-pointer`}
-          onClick={() => handleTabClick("projects")}
-        >
+          }`}
+          onClick={() => handleTabClick("projects")}>
           Projects
         </div>
       </div>
 
-      <div className="">
+      {/* Tab Content */}
+      <div className="text-center">
         {activeTab === "experience" && (
           <div>
-            <div>
-              <div className="text-[40px] font-tertiary text-gradient mb-2 text-white">
-                <CountUp start={0} end={13} duration={3} />
-              </div>
-              <div className="font-primary text-sm  text-white tracking-[2px]">
-                Years of <br />
-                exprience
-              </div>
+            <div className="text-[40px] font-tertiary text-gradient mb-2 text-white">
+              <CountUp start={0} end={2} duration={3} />+
+            </div>
+            <div className="font-primary text-sm text-white tracking-[2px]">
+              Years of Experience
+            </div>
+          </div>
+        )}
+        {activeTab === "clients" && (
+          <div>
+            <div className="text-[40px] font-tertiary text-gradient mb-2 text-white">
+              <CountUp start={0} end={15} duration={3} />+
+            </div>
+            <div className="font-primary text-sm text-white tracking-[2px]">
+              Happy Clients
             </div>
           </div>
         )}
         {activeTab === "projects" && (
           <div>
-            <div>
-              <div className="text-[40px] font-tertiary text-gradient mb-2">
-                <CountUp start={0} end={15} duration={3} />
-                k+
-              </div>
-              <div className="font-primary text-sm tracking-[2px]">
-                Projects <br />
-                Completed
-              </div>
+            <div className="text-[40px] font-tertiary text-gradient mb-2 text-white">
+              <CountUp start={0} end={15} duration={3} />
+              k+
+            </div>
+            <div className="font-primary text-sm text-white tracking-[2px]">
+              Projects Completed
             </div>
           </div>
         )}

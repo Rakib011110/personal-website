@@ -29,8 +29,7 @@ const About = () => {
       <section
         className="section container mx-auto  border p-10"
         id="about"
-        ref={ref}
-      >
+        ref={ref}>
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row gap-y-10 lg:items-center lg:gap-x-20 lg:gap-y-0">
             {/* img */}
@@ -62,14 +61,12 @@ const About = () => {
                 borderRadius: "100%",
                 width: "420px",
                 margin: "auto",
-              }}
-            >
+              }}>
               <motion.div
                 variants={fadeIn("down", 0.5)}
                 initial="hidden"
                 animate="show"
-                className="lg:flex flex-1 w-full"
-              >
+                className="lg:flex flex-1 w-full">
                 <img className="rounded-full" src={Image} alt="" />
               </motion.div>
             </div>
@@ -79,8 +76,7 @@ const About = () => {
               variants={fadeIn("left", 0.5)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.3 }}
-            >
+              viewPort={{ once: false, amount: 0.3 }}>
               <div className="flex-1 text-white">
                 <h2 className="h2 text-white"></h2>
                 <h3 className="h3 mb-4 font-serif text-white">
@@ -99,24 +95,22 @@ const About = () => {
               {/* stats */}
               <div className="flex gap-x-6 flex-wrap lg:gap-x-10 mb-12">
                 <AboutText></AboutText>
-
-                <div>
+                {/* 
+                <div className="flex  mb-6 justify-center">
                   <div className="text-[40px]  text-white font-tertiary text-gradient mb-2">
-                    <CountUp start={0} end={10} duration={3} />
-                    k+
+                    <CountUp start={0} end={15} duration={3} />+
                   </div>
                   <div className="font-primary flex-wrap text-sm tracking-[2px] text-white">
-                    Satisfied <br />
-                    Clients
+                    Satisfied Clients
                   </div>
-                </div>
+                </div> */}
               </div>
-              <div className="flex gap-x-8 items-center">
+              {/* <div className="flex gap-x-8 items-center">
                 <button className="btn ">Contact me</button>
                 <a href="#" className="text-gradient btn-link">
                   My Portfolio
                 </a>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>

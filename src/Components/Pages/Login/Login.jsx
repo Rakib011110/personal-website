@@ -1,17 +1,86 @@
-import React from "react";
+import { Player } from "@lottiefiles/react-lottie-player";
+import React, { useContext, useState } from "react";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-scroll";
+import { ToastContainer, toast } from "react-toastify";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Login = () => {
+  const { signin, githulogin, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  const [error, setErr] = useState("");
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(password);
+
+    signin(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        navigate(from, { replace: true });
+        if (user) {
+          toast("Acount login Success");
+        }
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        setErr(errorMessage);
+      });
+  };
+
+  const handleGooglesignIn = () => {
+    googleSignIn()
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        navigate(from, { replace: true });
+
+        if (user) {
+          toast("Acount Create Success");
+        }
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        // ..
+      });
+  };
+
+  const handlegithublogin = () => {
+    githulogin()
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        navigate(from, { replace: true });
+
+        if (user) {
+          toast("Acount Create Success");
+        }
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        // ..
+      });
   };
 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero h-full bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           {/* <div className="text-center lg:text-left">
             <Player
@@ -22,7 +91,7 @@ const Login = () => {
               // style={{ height: "500px", width: "700px" }}
             ></Player>
           </div> */}
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card p-3 h-full flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <h1 className="text-5xl font-bold text-indigo-600">Login now!</h1>
 
             <form onSubmit={handleLogin} className="card-body">
@@ -66,11 +135,11 @@ const Login = () => {
               </div>
             </form>
 
-            <div class="flex  flex-row w-96 mr-6 items-center justify-center lg:justify-start">
-              <p class="mb-0 mr-28 text-lg"></p>
+            <div className="flex  flex-row w-96 mr-6 items-center justify-center lg:justify-start">
+              <p className="mb-0 mr-28 text-lg"></p>
 
               <button
-                onClick={handlegithulogin}
+                onClick={handlegithublogin}
                 type="button"
                 data-te-ripple-init
                 data-te-ripple-color="light"

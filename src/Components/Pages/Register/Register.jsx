@@ -1,13 +1,21 @@
 import { Player } from "@lottiefiles/react-lottie-player";
-import React, { useState } from "react";
-import { ToastContainer } from "react-toastify";
+import React, { useContext, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Register = () => {
-  const [error, setError] = useState();
+  const [error, setErr] = useState("");
 
-  const handleCreateUser = (e) => {
+  const { createUser, user, updateUserData, googleSignIn, githulogin } =
+    useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
+  const handleCreateUser = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -15,10 +23,56 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password, photo);
+
+    createUser(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        updateUserData(name, photo);
+        navigate(from, { replace: true });
+        form.reset();
+        if (user) {
+          toast("Acount Create Success");
+        }
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setErr(errorMessage);
+      });
   };
 
-  const handlegithulogin = () => {};
-  const handleGooglesignIn = () => {};
+  const handlegithulogin = () => {
+    githulogin()
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        navigate(from, { replace: true });
+
+        if (user) {
+          toast("Acount Create Success");
+        }
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
+  const handleGooglesignIn = () => {
+    googleSignIn()
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        navigate(from, { replace: true });
+        if (user) {
+          toast("Acount Create Success");
+        }
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
 
   return (
     <div>
@@ -127,7 +181,7 @@ const Register = () => {
                 </div>
                 <p className="mt-4">
                   Allready Have an Account
-                  <Link className="text-indigo-600" to="/register">
+                  <Link className="text-indigo-600" to="/login">
                     {" "}
                     Login{" "}
                   </Link>{" "}

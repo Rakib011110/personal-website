@@ -33,7 +33,7 @@ const Banner = () => {
               variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewPort={{ once: false, amount: 0.7 }}
               className="text-[42px] font-bold leading-[0.8] lg:text-[72px]"
             >
               RAKIBUL <span>ISLAM</span>
@@ -42,7 +42,7 @@ const Banner = () => {
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewPort={{ once: false, amount: 0.7 }}
               className="mb-6 text-[36px] lg:text-[60px]  font-secondary font-semibold uppercase leading-[1]"
             >
               <span className="mr-4 text-white">I am a</span>
@@ -71,7 +71,7 @@ const Banner = () => {
               variants={fadeIn("up", 0.5)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewPort={{ once: false, amount: 0.7 }}
               className="mb-8 max-w-lg mx-auto lg:mx-0 text-white"
             >
               Welcom to My Personal Website Lorem ipsum dolor sit amet
@@ -82,7 +82,7 @@ const Banner = () => {
               variants={fadeIn("up", 0.6)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewPort={{ once: false, amount: 0.7 }}
               className="flex max-w-max gap-x-6 items-center mb-10 mx-auto lg:mx-0"
             >
               {/* <button
@@ -118,7 +118,7 @@ const Banner = () => {
               variants={fadeIn("up", 0.7)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
+              viewPort={{ once: false, amount: 0.7 }}
               className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
             >
               <a href="#" className="btn">
