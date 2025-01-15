@@ -29,7 +29,7 @@ const AboutText = () => {
       </div>
 
       {/* Tab Content */}
-      <div className="mt-6 bg-gray-700 p-6 rounded-md text-white">
+      <div className="mt-6 bg-[#08061b] p-6 rounded-md text-white">
         {activeTab === "certifications" && (
           <div>
             <h4 className="text-xl font-bold mb-4">
@@ -93,7 +93,7 @@ const AboutText = () => {
           <div className="text-center">
             <h4 className="text-xl font-bold mb-4">Experience</h4>
             <div className="text-5xl font-bold">
-              <CountUp start={0} end={2} duration={3} />+
+              <CountUp start={0} end={1} duration={3} />+
             </div>
             <p className="mt-2">Years of Experience</p>
           </div>
@@ -103,7 +103,7 @@ const AboutText = () => {
           <div className="text-center">
             <h4 className="text-xl font-bold mb-4">Projects</h4>
             <div className="text-5xl font-bold">
-              <CountUp start={0} end={15} duration={3} />+
+              <CountUp start={0} end={30} duration={3} />
             </div>
             <p className="mt-2">Projects Completed</p>
           </div>

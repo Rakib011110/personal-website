@@ -122,8 +122,10 @@ const Work = () => {
   };
 
   return (
-    <div className=" mt-20 mb-10 text-white container mx-auto  p-6">
-      <h1 className="text-4xl font-bold text-center mb-8">My Projects</h1>
+    <div className=" mt-20 mb-10 text-white   container mx-auto  p-6">
+      <h1 className="text-4xl font-bold text-center uppercase border-b w-72 mx-auto mb-8">
+        My Projects
+      </h1>
       <div className="grid grid-cols-1 cursor-pointer md:grid-cols-2 lg:grid-cols-4  gap-8">
         {displayedCards.map((card, index) => (
           <motion.div

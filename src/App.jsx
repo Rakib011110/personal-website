@@ -18,17 +18,18 @@ function App() {
   };
   return (
     <>
-      <ParticlesBg
-        className="mx-auto container"
-        type="custom"
-        bg={true}
-        num={5}
-      />
+      <div className="">
+        <ParticlesBg
+          className="mx-auto container"
+          type="custom"
+          bg={true}
+          num={5}
+        />
 
-      {/* <AnimatedCursor type="rings" /> */}
+        {/* <AnimatedCursor type="rings" /> */}
 
-      {/* Custom cursor with a custom image */}
-      {/* <AnimatedCursor
+        {/* Custom cursor with a custom image */}
+        {/* <AnimatedCursor
         type="rings"
         innerSize={18}
         outerSize={30}
@@ -38,36 +39,36 @@ function App() {
         outerScale={5}
       /> */}
 
-      {/* Predefined cursor types */}
-      {/* <AnimatedCursor type="circle" /> */}
+        {/* Predefined cursor types */}
+        {/* <AnimatedCursor type="circle" /> */}
 
-      <HeaderNav></HeaderNav>
-      <SocialLinks></SocialLinks>
-      <Navbar />
+        <HeaderNav></HeaderNav>
+        <SocialLinks></SocialLinks>
+        <Navbar />
 
-      <div className="content bg-[url('https://res.cloudinary.com/dqp2vi7h1/image/upload/v1736330920/33_lgmoyd.jpg')] ">
-        <section id="home">
-          <Banner></Banner>
-        </section>
+        <div className="content bg-[url('https://res.cloudinary.com/dqp2vi7h1/image/upload/v1736330920/33_lgmoyd.jpg')] ">
+          <section id="home">
+            <Banner></Banner>
+          </section>
 
-        <section id="about">
-          <About></About>
-        </section>
-        <section id="services">
-          <Experience></Experience>
-        </section>
-        <section id="work">
-          <Work></Work>
-        </section>
-        <section id="blog">
-          <Blog></Blog>
-        </section>
-        <section id="contact">
-          <Contact></Contact>
-        </section>
-        <section id="contact">
-          <Contact></Contact>
-        </section>
+          <section id="about">
+            <About></About>
+          </section>
+          <section id="services">
+            <Experience></Experience>
+          </section>
+          <section id="work">
+            <Work></Work>
+          </section>
+          <section id="blog">
+            <Blog></Blog>
+          </section>
+          <section
+            className=" bg-[url('https://res.cloudinary.com/dqp2vi7h1/image/upload/v1736330920/33_lgmoyd.jpg')]"
+            id="contact">
+            <Contact></Contact>
+          </section>
+        </div>
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import Image from "../../../assets/IMG_20230523_122645_Bokeh_3-removebg.png";
+import AboutImg from "../../../assets/pngwing.com.png";
 import AboutText from "../../../Common/AboutText";
 
 const About = () => {
@@ -16,9 +17,9 @@ const About = () => {
   });
 
   return (
-    <div className="mt-24 px-6 lg:px-16">
+    <div className="mt-24  px-6 lg:px-16">
       <section
-        className="section container mx-auto rounded-md border border-gray-300 shadow-lg p-10 bg-gray-800"
+        className="section container mx-auto border-t-0 shadow-none border-blue-700 rounded-md  border   shadow-2xl shadow-blue-800 p-10 "
         id="about"
         ref={ref}>
         <div className="container mx-auto">
@@ -30,13 +31,13 @@ const About = () => {
               animate="show"
               className="lg:w-1/2">
               <div
-                className="bg-cover bg-center w-80 h-80 rounded-full mx-auto"
+                className="bg-cover  bg-center md:w-80 lg:w-[700px]   mx-auto"
                 style={{
                   backgroundImage: `url('https://i.ibb.co/YfS1rbj/brush.png')`,
                 }}>
                 <img
                   className="w-full h-full rounded-full object-cover"
-                  src={Image}
+                  src={AboutImg}
                   alt="Rakibul Islam"
                 />
               </div>
@@ -49,9 +50,9 @@ const About = () => {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}
               className="lg:w-1/2 text-white space-y-6">
-              <h1 className="text-4xl font-bold text-center lg:text-left">
+              {/* <h1 className="text-4xl font-bold text-center lg:text-left">
                 About Me
-              </h1>
+              </h1> */}
               <p className="text-sm md:text-base leading-relaxed">
                 Hi, I am Rakibul Islam. I am a passionate and dedicated
                 Full-Stack Web Developer with expertise in modern web

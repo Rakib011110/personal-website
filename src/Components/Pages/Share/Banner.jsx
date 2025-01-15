@@ -22,7 +22,7 @@ import bgAnimate from "../../../../public/bgAnimattion.json";
 const Banner = () => {
   return (
     <section
-      className="min-h-[70vh]  lg:min-h-[70vh]  container mx-auto  flex items-center "
+      className="min-h-[70vh]  border border-blue-700 rounded-lg border-b-0 lg:min-h-[70vh] border-t-0 p-8 container mx-auto  flex items-center "
       id="home">
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center">
@@ -72,7 +72,7 @@ const Banner = () => {
               className="mb-8 max-w-lg mx-auto lg:mx-0 text-white">
               Welcome to My Portfolio! Explore my projects and journey as I
               create impactful and innovative solutions. Let’s connect and bring
-              ideas to life!🚀
+              ideas to life!
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.6)}

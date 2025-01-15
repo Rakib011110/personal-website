@@ -85,70 +85,68 @@ const Experience = () => {
   return (
     //   className="bg-gradient-to-b from-gray-800 to-black w-full h-screen"
 
-    <motion.div
-      className=""
-      initial="hidden"
-      whileInView="visible"
-      viewPort={{ once: true, amount: 0.1 }}
-      transition={{ duration: 1 }}
-      variants={{
-        hidden: { opacity: 0, y: -50 },
-        visible: { opacity: 1, y: 0 },
-      }}>
-      <div className=" items-center  mt-32 justify-center ">
-        <div name="experience" className="">
-          <div className=" container mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
-            <div className="text-center">
-              <TextComponent>
-                <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
-                  EXPRERIENCE
-                </p>
-              </TextComponent>
-              <p className="py-6 font-bold text-cyan-200 ">
-                These are the technologies I've worked with
-              </p>
-            </div>
+    <div className=" ">
+      <motion.div
+        className=""
+        initial="hidden"
+        whileInView="visible"
+        viewPort={{ once: true, amount: 0.1 }}
+        transition={{ duration: 1 }}
+        variants={{
+          hidden: { opacity: 0, y: -50 },
+          visible: { opacity: 1, y: 0 },
+        }}>
+        <div className=" items-center   mt-32 justify-center ">
+          <div name="experience" className="">
+            <div className=" container mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+              <div className="text-center">
+                <TextComponent>
+                  <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
+                    EXPRERIENCE
+                  </p>
+                </TextComponent>
+              </div>
 
-            <div className="w-full   border border-t-0 grid grid-cols-1   md:grid-cols-3  lg:grid-cols-5 my-  gap-8 text-center  py-5 px-12 p-4 sm:px-10 ">
-              {techs.map(({ id, src, title, style }) => (
-                <div
-                  key={id}
-                  className={`shadow-md border w-full   rounded-full hover:scale-75 p-16 duration-1000 py-2 rounded- ${style}`}>
-                  {/* <img src={src} alt="" className="w-20 mx-auto" /> */}
-                  <p className="mt-4"></p>
+              <div className="w-full    grid grid-cols-1   md:grid-cols-3  lg:grid-cols-5 my-  gap-8 text-center  py-5 px-12 p-4 sm:px-10 ">
+                {techs.map(({ id, src, title, style }) => (
+                  <div
+                    key={id}
+                    className={`shadow-md border w-full   rounded-full hover:scale-75 p-16 duration-1000 py-2 rounded- ${style}`}>
+                    {/* <img src={src} alt="" className="w-20 mx-auto" /> */}
+                    <p className="mt-4"></p>
 
-                  <div className="flex    items-center justify-center ">
-                    <div>
-                      <div className="">
-                        <div className="group relative cursor-pointer items-center justify-center overflow-hidden  rounded-full transition-shadow hover:shadow-xl hover:shadow-black/30">
-                          <div className="">
-                            <img src={src} alt="" className=" " />
+                    <div className="flex    items-center justify-center ">
+                      <div>
+                        <div className="">
+                          <div className="group relative cursor-pointer items-center justify-center overflow-hidden  rounded-full transition-shadow hover:shadow-xl hover:shadow-black/30">
+                            <div className="">
+                              <img src={src} alt="" className=" " />
+                            </div>
+                            {/* <div className="absolute inset-0  from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div> */}
+                            <div className="absolute inset-0 flex translate-y-[90%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                              <h1 className="font-dmserif text-3xl font-bold p-2 rounded-md backdrop-blur-lg text-white">
+                                {title}
+                              </h1>
+                              <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"></p>
+                            </div>
                           </div>
-                          {/* <div className="absolute inset-0  from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div> */}
-                          <div className="absolute inset-0 flex translate-y-[90%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-                            <h1 className="font-dmserif text-3xl font-bold p-2 rounded-md backdrop-blur-lg text-white">
-                              {title}
-                            </h1>
-                            <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"></p>
-                          </div>
+
+                          <div className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30"></div>
                         </div>
-
-                        <div className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30"></div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
+
+          {/* ------------- */}
+
+          {/* --------------- */}
         </div>
-
-        {/* ------------- */}
-
-        {/* --------------- */}
-      </div>
-      <div>
-        {/* <div className="fixed bottom-16  hidden  lg:flex flex-col top-[90%] left-[30%]  ">
+        <div>
+          {/* <div className="fixed bottom-16  hidden  lg:flex flex-col top-[90%] left-[30%]  ">
           <div>
             <p className="font-com text-2xl  text-center font-semibold text-white">
               All Images are from{" "}
@@ -158,8 +156,9 @@ const Experience = () => {
             </p>
           </div>
         </div> */}
-      </div>
-    </motion.div>
+        </div>
+      </motion.div>
+    </div>
   );
 };
 
