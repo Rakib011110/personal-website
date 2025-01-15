@@ -1,8 +1,15 @@
-import React from "react";
-import "../Works/Work.css";
-import TextComponent from "../../../Common/Title";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import "./Work.css";
 
 const Work = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const cardData = [
     {
       title: "Titans Arena",
@@ -98,81 +105,134 @@ const Work = () => {
     },
   ];
 
+  const cardsPerPage = 4;
+  const totalPages = Math.ceil(cardData.length / cardsPerPage);
+  const displayedCards = cardData.slice(
+    (currentPage - 1) * cardsPerPage,
+    currentPage * cardsPerPage
+  );
+
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <div className="text-center mt-24 mb-10 container mx-auto">
-      <TextComponent>
-        <p className="text-4xl w-1/2 mx-auto font-bold border-b-4 text-center border-gray-500 p-2">
-          MY RECENT WORK
-        </p>
-      </TextComponent>
-      <div className="w-full mt-16 gap-4 mx-auto grid lg:grid-cols-4 container md:grid-cols-2 sm:grid-cols-1">
-        {cardData.map((card, index) => (
-          <Card
+    <div className=" mt-20 mb-10 text-white container mx-auto  p-6">
+      <h1 className="text-4xl font-bold text-center mb-8">My Projects</h1>
+      <div className="grid grid-cols-1 cursor-pointer md:grid-cols-2 lg:grid-cols-4  gap-8">
+        {displayedCards.map((card, index) => (
+          <motion.div
             key={index}
-            image={card.photoUrl}
-            title={card.title}
-            description={card.description}
-            githubClient={card.githubLink?.client}
-            githubServer={card.githubLink?.server}
-            liveDemo={card.liveDemoLink}
-          />
+            whileHover={{ scale: 1.05 }}
+            className="relative  rounded-lg bg-white h-[400px] shadow-lg overflow-hidden"
+            onClick={() => handleCardClick(card)}>
+            <img
+              src={card.photoUrl}
+              alt={card.title}
+              className="w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-300">
+              <a
+                href={card.liveDemoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 px-4 py-2 text-sm rounded-lg text-white m-2">
+                Live Demo <FaExternalLinkAlt className="inline ml-2" />
+              </a>
+              <a
+                href={card.githubLink.client}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 px-4 py-2 text-sm rounded-lg text-white m-2">
+                Client Code <FaGithub className="inline ml-2" />
+              </a>
+              <a
+                href={card.githubLink.server}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-purple-500 px-4 py-2 text-sm rounded-lg text-white m-2">
+                Server Code <FaGithub className="inline ml-2" />
+              </a>
+            </div>
+          </motion.div>
         ))}
       </div>
-    </div>
-  );
-};
 
-const Card = ({
-  image,
-  title,
-  description,
-  githubClient,
-  githubServer,
-  liveDemo,
-}) => {
-  return (
-    <div className="card shadow-md shadow-blue-700 border-blue-700 border-2">
-      <div className="face front">
-        <img className="rounded-md" src={image} alt={title} />
-        {/* <div className="mt-72 p-3 w-44 mx-auto backdrop-blur-lg">
-          <h1>{title}</h1>
-        </div> */}
+      {/* Pagination */}
+      <div className="flex justify-center items-center mt-6">
+        <button
+          disabled={currentPage === 1}
+          onClick={() => setCurrentPage((prev) => prev - 1)}
+          className={`px-4 py-2 mx-2 rounded ${
+            currentPage === 1 ? "bg-gray-500 cursor-not-allowed" : "bg-blue-500"
+          }`}>
+          Previous
+        </button>
+        <span className="px-4">{`${currentPage} / ${totalPages}`}</span>
+        <button
+          disabled={currentPage === totalPages}
+          onClick={() => setCurrentPage((prev) => prev + 1)}
+          className={`px-4 py-2 mx-2 rounded ${
+            currentPage === totalPages
+              ? "bg-gray-500 cursor-not-allowed"
+              : "bg-blue-500"
+          }`}>
+          Next
+        </button>
       </div>
-      <div className="face back">
-        <TextComponent>
-          <h2 className="text-h2">{title}</h2>
-        </TextComponent>
-        <p className="text-p">{description}</p>
-        <div className="links mt-4">
-          {githubClient && (
-            <a
-              className="link-a mr-2"
-              href={githubClient}
-              target="_blank"
-              rel="noopener noreferrer">
-              Client Code
-            </a>
-          )}
-          {githubServer && (
-            <a
-              className="link-a mr-2"
-              href={githubServer}
-              target="_blank"
-              rel="noopener noreferrer">
-              Server Code
-            </a>
-          )}
-          {liveDemo && (
-            <a
-              className="link-a"
-              href={liveDemo}
-              target="_blank"
-              rel="noopener noreferrer">
-              Live Demo
-            </a>
-          )}
-        </div>
-      </div>
+
+      {/* Modal */}
+      {selectedCard && (
+        <Modal open={isModalOpen} onClose={closeModal} center>
+          <div className="flex flex-col lg:flex-row bg-black items-center p-6">
+            <div className="w-full lg:w-1/2">
+              <img
+                src={selectedCard.photoUrl}
+                alt={selectedCard.title}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="w-full lg:w-1/2 p-4">
+              <h2 className="text-2xl font-bold mb-4">{selectedCard.title}</h2>
+              <p className="mb-4">{selectedCard.description}</p>
+              <h3 className="text-lg font-semibold mb-2">Technologies Used:</h3>
+              <ul className="list-disc list-inside mb-4">
+                {selectedCard.technologies.map((tech, index) => (
+                  <li key={index}>{tech}</li>
+                ))}
+              </ul>
+              <div className="flex gap-4">
+                <a
+                  href={selectedCard.liveDemoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 px-4 py-2 text-sm rounded-lg text-white">
+                  Live Demo
+                </a>
+                <a
+                  href={selectedCard.githubLink.client}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 px-4 py-2 text-sm rounded-lg text-white">
+                  Client Code
+                </a>
+                <a
+                  href={selectedCard.githubLink.server}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-purple-500 px-4 py-2 text-sm rounded-lg text-white">
+                  Server Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

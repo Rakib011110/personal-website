@@ -9,15 +9,17 @@ const AboutText = () => {
   };
 
   return (
-    <div className=" items-center justify-center gap-6">
+    <div className="mt-8">
       {/* Tabs Navigation */}
-      <div className="flex flex-wrap gap-2 sm:gap-4 justify-start  md:px-8 lg:px-0 overflow-x-auto">
+      <div className="flex justify-center lg:justify-start gap-4 overflow-x-auto">
         {["certifications", "education", "experience", "projects"].map(
           (tab) => (
             <div
               key={tab}
-              className={`py-2 px-4 btn rounded cursor-pointer whitespace-nowrap ${
-                activeTab === tab ? "bg-blue-500 text-white" : "bg-gray-300"
+              className={`py-2 px-6 cursor-pointer rounded-md text-sm font-medium ${
+                activeTab === tab
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-200 text-gray-800"
               }`}
               onClick={() => handleTabClick(tab)}>
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -27,111 +29,85 @@ const AboutText = () => {
       </div>
 
       {/* Tab Content */}
-      <div className="mt-4 ">
-        <div>
-          {activeTab === "certifications" && (
-            <div className="me-12">
-              <h4 className="text-xl font-bold text-white mb-4">
-                Licenses & Certifications
-              </h4>
-              <ul className="list-disc font-sans list-inside space-y-4 text-sm text-white tracking-wide">
-                <li>
-                  <span className="font-semibold font-sans">
-                    Complete Next Level Web Development Course
-                  </span>{" "}
-                  – Programming Hero
-                  <p className="text-gray-100 text-xs font-sans mt-1">
-                    Comprehensive program focusing on full-stack web
-                    development.
-                    <a
-                      href="https://web.programming-hero.com/verification?validationNumber=PHlevel2-batch-3-fullstackWEB7-47451043"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-400 underline">
-                      View Certificate
-                    </a>
-                  </p>
-                </li>
-                <li>
-                  <span className="font-semibold font-sans">
-                    Industrial Attachment in Professional Web
-                  </span>{" "}
-                  – Creative IT Institute
-                  <p className="text-gray-100 text-xs mt-1 font-sans">
-                    Practical training with hands-on experience in web
-                    development projects.
-                  </p>
-                </li>
-                <li>
-                  <span className="font-semibold">Endgame Program</span> –
-                  Programming Hero (Recommendation Letter)
-                  <p className="text-gray-100 text-xs mt-1">
-                    Advanced-level mentoring to refine web development skills.
-                  </p>
-                </li>
-              </ul>
-            </div>
-          )}
-        </div>
+      <div className="mt-6 bg-gray-700 p-6 rounded-md text-white">
+        {activeTab === "certifications" && (
+          <div>
+            <h4 className="text-xl font-bold mb-4">
+              Licenses & Certifications
+            </h4>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <span className="font-semibold">
+                  Complete Next Level Web Development Course
+                </span>{" "}
+                – Programming Hero
+                <p className="text-gray-300 mt-1">
+                  Comprehensive program focusing on full-stack web development.
+                  <a
+                    href="https://web.programming-hero.com/verification?validationNumber=PHlevel2-batch-3-fullstackWEB7-47451043"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 underline ml-1">
+                    View Certificate
+                  </a>
+                </p>
+              </li>
+              <li>
+                <span className="font-semibold">
+                  Industrial Attachment in Professional Web
+                </span>{" "}
+                – Creative IT Institute
+                <p className="text-gray-300 mt-1">
+                  Practical training with hands-on experience in web development
+                  projects.
+                </p>
+              </li>
+              <li>
+                <span className="font-semibold">Endgame Program</span> –
+                Programming Hero (Recommendation Letter)
+                <p className="text-gray-300 mt-1">
+                  Advanced-level mentoring to refine web development skills.
+                </p>
+              </li>
+            </ul>
+          </div>
+        )}
 
-        <div>
-          {activeTab === "education" && (
-            <div>
-              <h4 className="text-xl font-bold text-white mb-2">Education</h4>
-              <p className="font-primary text-sm text-white tracking-[2px]">
-                <strong>Southeast University (SEU)</strong>
-                <br />
-                ● Degree: Bachelor of Science (BSc) in Computer Science
-                <br />
-                ● Duration: 2024 – Present
-                <br />
-                <br />
-                <strong>Pabna Polytechnic Institute</strong>
-                <br />
-                ● Diploma in Computer Science and Technology
-                <br />● Duration: 2019 – 2023
-              </p>
-            </div>
-          )}
-        </div>
+        {activeTab === "education" && (
+          <div>
+            <h4 className="text-xl font-bold mb-4">Education</h4>
+            <p>
+              <strong>Southeast University (SEU)</strong>
+              <br />
+              ● Degree: Bachelor of Science (BSc) in Computer Science (2024 –
+              Present)
+              <br />
+              <br />
+              <strong>Pabna Polytechnic Institute</strong>
+              <br />● Diploma in Computer Science and Technology (2019 – 2023)
+            </p>
+          </div>
+        )}
 
-        <div className="">
-          {activeTab === "experience" && (
-            <div className="">
-              <div className="text-[40px]  font-tertiary text-gradient mb-2 text-white">
-                <CountUp start={0} end={2} duration={3} />+
-              </div>
-              <div className="font-primary text-sm  text-white tracking-[2px]">
-                Years of Experience
-              </div>
+        {activeTab === "experience" && (
+          <div className="text-center">
+            <h4 className="text-xl font-bold mb-4">Experience</h4>
+            <div className="text-5xl font-bold">
+              <CountUp start={0} end={2} duration={3} />+
             </div>
-          )}
-        </div>
-        <div>
-          {activeTab === "clients" && (
-            <div>
-              <div className="text-[40px] font-tertiary text-gradient mb-2 text-white">
-                <CountUp start={0} end={15} duration={3} />+
-              </div>
-              <div className="font-primary text-sm text-white tracking-[2px]">
-                Happy Clients
-              </div>
+            <p className="mt-2">Years of Experience</p>
+          </div>
+        )}
+
+        {activeTab === "projects" && (
+          <div className="text-center">
+            <h4 className="text-xl font-bold mb-4">Projects</h4>
+            <div className="text-5xl font-bold">
+              <CountUp start={0} end={15} duration={3} />+
             </div>
-          )}
-        </div>
-        <div>
-          {activeTab === "projects" && (
-            <div>
-              <div className="text-[40px] font-tertiary text-gradient mb-2 text-white">
-                <CountUp start={0} end={15} duration={3} />
-                k+
-              </div>
-              <div className="font-primary text-sm text-white tracking-[2px]">
-                Projects Completed
-              </div>
-            </div>
-          )}
-        </div>
+            <p className="mt-2">Projects Completed</p>
+          </div>
+        )}
       </div>
     </div>
   );
