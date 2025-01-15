@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../../../personal-web-dashboard/src/Provider/AuthProvider";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Register = () => {
   const [error, setErr] = useState("");
