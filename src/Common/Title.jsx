@@ -3,8 +3,8 @@ import React from "react";
 const TextComponent = ({ children }) => {
   const gradientStyles = [
     // "linear-gradient(to right, #FF6E7F, #BFE9FF)", // Red and blue
-    // "linear-gradient(to right, #FFA06D, #FFD78E)", // Orange and yellow
-    "linear-gradient(to right, #6C63FF, #E0E3FF)",
+    // "linear-gradient(to right, #FFA06D, #fffdfa)", // Orange and yellow
+    "linear-gradient(to right, #f1f0fd, #ffffff)",
   ];
 
   const getRandomGradient = () => {
@@ -18,7 +18,7 @@ const TextComponent = ({ children }) => {
     WebkitTextFillColor: "transparent",
     fontSize: "40px",
     fontWeight: "bold",
-    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
+    textShadow: "1px 1px 2px rgba(255, 255, 255, 0.3)",
     marginBottom: "20px",
   };
 

@@ -22,9 +22,8 @@ import bgAnimate from "../../../../public/bgAnimattion.json";
 const Banner = () => {
   return (
     <section
-      className="min-h-[85vh] lg:min-h-[78vh] container mx-auto  flex items-center "
-      id="home"
-    >
+      className="min-h-[70vh]  lg:min-h-[70vh]  container mx-auto  flex items-center "
+      id="home">
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center">
           {/* text */}
@@ -34,8 +33,7 @@ const Banner = () => {
               initial="hidden"
               whileInView={"show"}
               viewPort={{ once: false, amount: 0.7 }}
-              className="text-[42px] font-bold leading-[0.8] lg:text-[72px]"
-            >
+              className="text-[42px] font-bold leading-[0.8] lg:text-[72px]">
               RAKIBUL <span>ISLAM</span>
             </motion.h1>
             <motion.div
@@ -43,8 +41,7 @@ const Banner = () => {
               initial="hidden"
               whileInView={"show"}
               viewPort={{ once: false, amount: 0.7 }}
-              className="mb-6 text-[36px] lg:text-[60px]  font-secondary font-semibold uppercase leading-[1]"
-            >
+              className="mb-6 text-[36px] lg:text-[60px]  font-secondary font-semibold uppercase leading-[1]">
               <span className="mr-4 text-white">I am a</span>
               <TextComponent>
                 <TypeAnimation
@@ -72,19 +69,17 @@ const Banner = () => {
               initial="hidden"
               whileInView={"show"}
               viewPort={{ once: false, amount: 0.7 }}
-              className="mb-8 max-w-lg mx-auto lg:mx-0 text-white"
-            >
-              Welcom to My Personal Website Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Maxime mollitia, molestiae quas vel
-              sint comm
+              className="mb-8 max-w-lg mx-auto lg:mx-0 text-white">
+              Welcome to My Portfolio! Explore my projects and journey as I
+              create impactful and innovative solutions. Let’s connect and bring
+              ideas to life!🚀
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.6)}
               initial="hidden"
               whileInView={"show"}
               viewPort={{ once: false, amount: 0.7 }}
-              className="flex max-w-max gap-x-6 items-center mb-10 mx-auto lg:mx-0"
-            >
+              className="flex max-w-max gap-x-6 items-center mb-10 mx-auto lg:mx-0">
               {/* <button
                 className="btn btn-lg"
                 style={{
@@ -104,8 +99,7 @@ const Banner = () => {
                   to="work"
                   smooth
                   duration={500}
-                  className="group text-white btn"
-                >
+                  className="group text-white btn">
                   PORTFOLIO
                   <span className="group-hover:rotate-90 duration-300">
                     <FaArrowAltCircleRight size={25} className="ml-1" />
@@ -119,8 +113,7 @@ const Banner = () => {
               initial="hidden"
               whileInView={"show"}
               viewPort={{ once: false, amount: 0.7 }}
-              className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
-            >
+              className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0">
               <a href="#" className="btn">
                 <FaYoutube className="text-3xl text-white " />
               </a>
@@ -139,7 +132,7 @@ const Banner = () => {
               variants={fadeIn("down", 0.5)}
               initial="hidden"
               whileInView={"show"}
-              className="hidden lg:flex mb- flex-1  max-w-[320px] lg:max-w-[682px] w-[620px] relative" // Added relative positioning
+              className="hidden lg:flex mb- flex-1  max-w-[320px] lg:max-w-[590px] w-[590px] relative" // Added relative positioning
             >
               <Player
                 className="mt-10"
@@ -151,7 +144,7 @@ const Banner = () => {
                   top: 25,
                   left: 0,
                   width: "100%",
-                  height: "100%",
+                  height: "95%",
                   objectFit: "cover",
                 }}
               />

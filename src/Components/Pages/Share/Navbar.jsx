@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-scroll";
-import { BiHomeAlt, BiUser } from "react-icons/bi";
+import { BiBook, BiHomeAlt, BiUser } from "react-icons/bi";
 import { BsClipboardData, BsBriefcase, BsChatSquare } from "react-icons/bs";
+import { FaArtstation } from "react-icons/fa";
 
 function Navbar() {
   return (
@@ -15,8 +16,7 @@ function Navbar() {
             smooth={true}
             spy={true}
             offset={-200}
-            className="cursor-pointer   w-[55px] h-[55px] flex items-center justify-center"
-          >
+            className="cursor-pointer   w-[55px] h-[55px] flex items-center justify-center">
             <BiHomeAlt className="text-white text-2xl" />
           </Link>
           <Link
@@ -24,8 +24,7 @@ function Navbar() {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer   w-[55px] h-[55px] flex items-center justify-center"
-          >
+            className="cursor-pointer   w-[55px] h-[55px] flex items-center justify-center">
             <BiUser className="text-white text-2xl" />
           </Link>
           <Link
@@ -33,8 +32,7 @@ function Navbar() {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center"
-          >
+            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center">
             <BsClipboardData className="text-white text-2xl" />
           </Link>
           <Link
@@ -42,17 +40,23 @@ function Navbar() {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center"
-          >
+            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center">
             <BsBriefcase className="text-white text-2xl" />
+          </Link>
+          <Link
+            to="blog"
+            activeClass="active"
+            smooth={true}
+            spy={true}
+            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center">
+            <BiBook className="text-white text-2xl" />
           </Link>
           <Link
             to="contact"
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center"
-          >
+            className="cursor-pointer  w-[55px] h-[55px] flex items-center justify-center">
             <BsChatSquare className="text-white text-2xl" />
           </Link>
         </div>

@@ -34,34 +34,22 @@ body {
   }
 }
 .btn {
-  background: linear-gradient(
-    92.23deg,
-    #b83ab2 21.43%,
-    #9c2cc7 50.63%,
-    #318db8 100%,
-    #2440a5 117.04%,
-    rgb(61, 5, 101)
-  );
-  /* box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51); */
+  background: linear-gradient(92.23deg, #2c57f1 117.04%, rgb(61, 5, 101));
+  box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
+  color: white;
 }
 
 .btn:hover {
-  background: linear-gradient(
-    92.23deg,
-    #406aff 21.43%,
-    #3bace2 50.63%,
-    #b936ee 100%,
-    #ff56f6 117.04%
-  );
+  background: linear-gradient(92.23deg, #0534df 21.43%, #0a18da 50.63%);
 }
 .gradient,
 .active {
   background: linear-gradient(
     92.23deg,
-    #406aff 21.43%,
-    #3bace2 50.63%,
+    /* #406aff 21.43%,
     #b936ee 100%,
-    #ff56f6 117.04%
+    #ff56f6 117.04% */ #0534df 21.43%,
+    #0a18da 50.63%
   );
 }
 

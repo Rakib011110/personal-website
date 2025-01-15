@@ -80,18 +80,6 @@ const Experience = () => {
       title: "GraphQL",
       style: "shadow-pink-400 shadow-lg",
     },
-    {
-      id: 8,
-      src: github,
-      title: "GitHub",
-      style: "shadow-gray-400 shadow-lg",
-    },
-    {
-      id: 8,
-      src: redux,
-      title: "Redux",
-      style: " bg-white shadow-purple-400  shadow-lg",
-    },
   ];
 
   return (
@@ -107,9 +95,9 @@ const Experience = () => {
         hidden: { opacity: 0, y: -50 },
         visible: { opacity: 1, y: 0 },
       }}>
-      <div className=" items-center  mt-64 justify-center ">
+      <div className=" items-center  mt-32 justify-center ">
         <div name="experience" className="">
-          <div className=" max-w-screen-2xl mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+          <div className=" container mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
             <div className="text-center">
               <TextComponent>
                 <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
@@ -121,24 +109,24 @@ const Experience = () => {
               </p>
             </div>
 
-            <div className="w-full  grid border grid-cols-2 my-5  sm:grid-cols-4 gap-8 text-center  py-8 px-12 sm:px-5">
+            <div className="w-full   border border-t-0 grid grid-cols-1   md:grid-cols-3  lg:grid-cols-5 my-  gap-8 text-center  py-5 px-12 p-4 sm:px-10 ">
               {techs.map(({ id, src, title, style }) => (
                 <div
                   key={id}
-                  className={`shadow-md border  rounded-full hover:scale-50 p-24  duration-1000 py-2 rounded- ${style}`}>
+                  className={`shadow-md border w-full   rounded-full hover:scale-75 p-16 duration-1000 py-2 rounded- ${style}`}>
                   {/* <img src={src} alt="" className="w-20 mx-auto" /> */}
                   <p className="mt-4"></p>
 
                   <div className="flex    items-center justify-center ">
                     <div>
                       <div className="">
-                        <div className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+                        <div className="group relative cursor-pointer items-center justify-center overflow-hidden  rounded-full transition-shadow hover:shadow-xl hover:shadow-black/30">
                           <div className="">
                             <img src={src} alt="" className=" " />
                           </div>
-                          <div className="absolute inset-0  from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                          {/* <div className="absolute inset-0  from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div> */}
                           <div className="absolute inset-0 flex translate-y-[90%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-                            <h1 className="font-dmserif text-3xl font-bold text-white">
+                            <h1 className="font-dmserif text-3xl font-bold p-2 rounded-md backdrop-blur-lg text-white">
                               {title}
                             </h1>
                             <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"></p>

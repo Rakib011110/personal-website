@@ -10,6 +10,7 @@ import HeaderNav from "./Components/HeaderNav/HeaderNav";
 import SocialLinks from "./Common/SocialLink";
 import ParticlesBg from "particles-bg";
 import Work from "./Components/Pages/Works/Work";
+import Blog from "./Components/Blog/Blog";
 
 function App() {
   const backgroundStyle = {
@@ -44,7 +45,7 @@ function App() {
       <SocialLinks></SocialLinks>
       <Navbar />
 
-      <div className="content bg-[url('https://zyan.vercel.app/images/bg/banner.jpg')] bg-cover ">
+      <div className="content bg-[url('https://res.cloudinary.com/dqp2vi7h1/image/upload/v1736330920/33_lgmoyd.jpg')] ">
         <section id="home">
           <Banner></Banner>
         </section>
@@ -57,6 +58,12 @@ function App() {
         </section>
         <section id="work">
           <Work></Work>
+        </section>
+        <section id="blog">
+          <Blog></Blog>
+        </section>
+        <section id="contact">
+          <Contact></Contact>
         </section>
         <section id="contact">
           <Contact></Contact>

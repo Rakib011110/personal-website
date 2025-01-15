@@ -17,49 +17,31 @@ const About = () => {
     show: { opacity: 1, y: 0, transition: { duration } },
   });
   return (
-    <div className="mt-64 ">
-      <TextComponent>
+    <div className="mt-52  ">
+      {/* <TextComponent>
         {" "}
-        <h1 className="text-center border-b-4 border-gray-500 w-72 mx-auto">
+        <h1 className="text-center w-72 border-gray-400 border-b-4  mx-auto">
           {" "}
           ABOUT ME{" "}
         </h1>{" "}
-      </TextComponent>
+      </TextComponent> */}
 
       <section
-        className="section container mx-auto  border p-10"
+        className="section container  mx-auto rounded-md border border-t-0 shadow-2xl p-10"
         id="about"
         ref={ref}>
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row gap-y-10 lg:items-center lg:gap-x-20 lg:gap-y-0">
+          <div className="flex flex-col lg:flex-row gap-y-10  lg:items-center lg:gap-x-20 lg:gap-y-0">
             {/* img */}
-            {/* <div
-              className="bg-animation"
-              style={{
-                background: "linear-gradient(to right, #7a49a8, #61a4bc)",
-                borderRadius: "100%",
-                width: "420px",
-                margin: "auto",
-              }}
-            >
-              <motion.div
-                variants={fadeIn("down", 0.5)}
-                initial="hidden"
-                animate="show"
-                className="lg:flex flex-1 w-full"
-              >
-                <img className="rounded-full" src={Image} alt="" />
-              </motion.div>
-            </div> */}
 
             <div
-              className="bg-animation"
+              className="bg-animation "
               style={{
                 backgroundImage: "url('https://i.ibb.co/YfS1rbj/brush.png')", // Replace 'path_to_your_image' with the actual path to your image
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 borderRadius: "100%",
-                width: "420px",
+
                 margin: "auto",
               }}>
               <motion.div
@@ -77,12 +59,12 @@ const About = () => {
               initial="hidden"
               whileInView={"show"}
               viewPort={{ once: false, amount: 0.3 }}>
-              <div className="flex-1 text-white">
+              <div className="flex-1 text-white backdrop-blur-lg">
                 <h2 className="h2 text-white"></h2>
-                <h3 className="h3 mb-4 font-serif text-white">
+                {/* <h3 className="h3 mb-4 font-serif text-white">
                   I'm a Front-end Developer with over 2 years of exprience.
-                </h3>
-                <p className="mb-6 font-serif text-white">
+                </h3> */}
+                {/* <p className="mb-6 font-serif text-white">
                   As a web developer experienced in , JavaScript, my goal is to
                   build captivating websites and applications. <br /> I am eager
                   to learn and collaborate with a talented team to create user-
@@ -90,10 +72,28 @@ const About = () => {
                   By writing clean code and problem- solving effectively,
                   <br />I aim to contribute to organizational success <br />{" "}
                   while advancing my career in web development.
+                </p> */}
+
+                <p class=" text-sm md:text-base font-serif mb-6 font-sans">
+                  <span className="text-4xl mb-4  font-sans font-bold">
+                    {" "}
+                    ABOUT ME{" "}
+                  </span>
+                  <br /> <br />
+                  Hi, I am Rakibul Islam. I am a passionate and dedicated
+                  Full-Stack Web Developer with expertise in modern web <br />
+                  technologies like React, Next.js, Node.js, TypeScript,
+                  <br /> and Prisma. I specialize in creating scalable,
+                  responsive, and user-friendly applications that solve <br />
+                  real-world problems. My technical expertise includes frontend
+                  and backend development, API integrations, and database
+                  <br />
+                  management. Feel free to contact me for collaboration or
+                  innovative projects.
                 </p>
               </div>
               {/* stats */}
-              <div className="flex gap-x-6 flex-wrap lg:gap-x-10 mb-12">
+              <div className="">
                 <AboutText></AboutText>
                 {/* 
                 <div className="flex  mb-6 justify-center">
