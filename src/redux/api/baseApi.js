@@ -4,8 +4,7 @@ const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({
     // baseUrl: "http://localhost:5000/api",
-    baseUrl:
-      "https://persional-web-backend-jjz5i1kop-rakib011110s-projects.vercel.app/api",
+    baseUrl: "https://persional-web-backend.vercel.app/api",
   }),
   tagTypes: ["Blog", "Projects"],
   endpoints: () => ({}),
